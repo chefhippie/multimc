@@ -26,7 +26,7 @@ end
 
 bash "multimc_install" do
   code <<-EOH
-    tar -jxvf #{node["multimc"]["file_name"]} --transform=s/#{node["multimc"]["file_replace"]}/#{node["multimc"]["install_directory"]}/ -C #{node["multimc"]["install_prefix"]}
+    tar -zxvf #{node["multimc"]["file_name"]} --transform=s/#{node["multimc"]["file_replace"]}/#{node["multimc"]["install_directory"]}/ -C #{node["multimc"]["install_prefix"]}
   EOH
 
   cwd Chef::Config[:file_cache_path]
